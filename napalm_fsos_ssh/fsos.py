@@ -470,6 +470,26 @@ class FsosDriver(NetworkDriver):
 
         return data
 
+    def get_mac_address_table(self) -> Dict[str, models.MACAdressTable]:
+        command = "show mac-address-table"
+        output = self._send_command(command, use_textfsm=True)
+
+        data = []
+        
+        for i in output:
+            data.append({
+                'mac'       : i['mac'].replace('-',':').lower(),
+                'interface' : i['interface'].strip(),
+                'vlan'      : i['vlan'],
+                'static'    : True if i['type'] == 'CPU' else False,
+                'active'    : True,
+                'moves'     : None,
+                'last_move' : None,
+            })
+
+        return data
+
+
     def get_ntp_servers(self) -> Dict[str, models.NTPServerDict]:
         command = "show ntp"
         output = self._send_command(command, use_textfsm=True)

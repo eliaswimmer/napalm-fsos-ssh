@@ -1,0 +1,8 @@
+Value Required INTERFACE ([a-zA-Z]+ ?(\d+)?\/? ?(\d+)?)
+Value MAC ((?:[0-9A-Fa-f]{2}[:-]){5}(?:[0-9A-Fa-f]{2}))
+Value VLAN (\d+)
+Value TYPE (CPU|Learn)
+Value LIFETIME (.*$$)
+
+Start
+  ^\s+${INTERFACE}\s+${MAC}\s+${VLAN}\s+${TYPE}\s+${LIFETIME} -> Record

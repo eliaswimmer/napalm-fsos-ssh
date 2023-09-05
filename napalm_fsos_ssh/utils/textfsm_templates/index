@@ -23,6 +23,7 @@ show_ipv6_route.textfsm, .*, .*, show ipv6 route
 show_lldp_neighbor_interface.textfsm, .*, .*, show lldp neighbor.+
 show_lldp_neighbor.textfsm, .*, .*, show lldp neighbor
 show_memory.textfsm, .*, .*, show memory
+show_mac_address_table.textfsm, .*, .*, show mac-address-table
 show_ntp.textfsm, .*, .*, show ntp
 show_snmp_server_engine_id.textfsm, .*, .*, show snmp-server engineID
 show_snmp_server.textfsm, .*, .*, show snmp-server
